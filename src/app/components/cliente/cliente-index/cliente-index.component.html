@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-end my-4">
+  <button type="button" class="btn btn-primary"
+          [routerLink]="['/clientes/create']">Nuevo
+  </button>
+</div>
+
+<table class="table table-striped table-hover">
+  <thead class="bg-dark text-white">
+  <tr>
+    <th scope="col">Nombre</th>
+    <th scope="col">Apellido</th>
+    <th scope="col">Email</th>
+    <th scope="col">Editar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cliente of clientes">
+    <td>{{cliente.nombre}}</td>
+    <td>{{cliente.apellido}}</td>
+    <td>{{cliente.email}}</td>
+    <td>
+      <button class="btn btn-info" [routerLink]="['/clientes/update',cliente.id]">
+        Editar
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

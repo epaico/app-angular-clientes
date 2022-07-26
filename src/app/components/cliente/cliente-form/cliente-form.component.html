@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <h3>{{titulo}}</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="cliente.nombre"
+               id="nombre" name="nombre" placeholder="Nombres">
+      </div>
+      <div class="mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" [(ngModel)]="cliente.apellido"
+               id="apellido" name="apellido" placeholder="Apellidos">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="cliente.email"
+               id="email" name="email" placeholder="Email">
+      </div>
+
+      <div *ngIf="!cliente.id; else templateActualizar">
+        <button class="btn btn-success" (click)="saveCliente()">Guardar</button>
+      </div>
+      <ng-template #templateActualizar>
+        <button class="btn btn-success" (click)="updateCliente()">Actualizar</button>
+      </ng-template>
+    </form>
+  </div>
+</div>
