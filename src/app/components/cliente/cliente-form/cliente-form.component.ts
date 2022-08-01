@@ -43,13 +43,13 @@ export class ClienteFormComponent implements OnInit {
         Swal.fire({
           icon: "success",
           title: "Cliente",
-          text: "Cliente Guardado correctamente"
+          text: `Cliente ${data.nombre} Guardado correctamente`
         });
       });
   }
 
   updateCliente(): void {
-    this.clienteService.saveCliente(this.cliente)
+    this.clienteService.updateCliente(this.cliente)
       .subscribe(cli => {
         this.router.navigate(['/clientes']);
         Swal.fire({

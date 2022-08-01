@@ -10,7 +10,7 @@
     <th scope="col">Nombre</th>
     <th scope="col">Apellido</th>
     <th scope="col">Email</th>
-    <th scope="col">Editar</th>
+    <th scope="col">Acciones</th>
   </tr>
   </thead>
   <tbody>
@@ -19,9 +19,10 @@
     <td>{{cliente.apellido}}</td>
     <td>{{cliente.email}}</td>
     <td>
-      <button class="btn btn-info" [routerLink]="['/clientes/update',cliente.id]">
+      <button class="btn btn-info mx-2" [routerLink]="['/clientes/update',cliente.id]">
         Editar
       </button>
+      <button class="btn btn-danger"  (click)="eliminarCliente(cliente)">ELiminar</button>
     </td>
   </tr>
   </tbody>
